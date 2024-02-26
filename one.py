@@ -1,4 +1,4 @@
-def operations (a: float, b: float, o:chr) -> float:
+def basic_operation (a: float, b: float, o:chr) -> float:
     match o:
         case "+":
             return a + b
@@ -19,4 +19,4 @@ if __name__ == "__main__":
             valid_input = True
         else:
             op: chr = input("Please enter one of the four symbols to do an operation between {} and {} (+, -, * or /): ".format(num1, num2))
-    print("The result of the operation {} {} {} is:".format(num1, op, num2), operations(num1, num2, op))
+    print("The result of the operation {} {} {} is:".format(num1, op, num2), basic_operation(num1, num2, op))

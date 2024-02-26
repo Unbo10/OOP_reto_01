@@ -1,7 +1,8 @@
 def find_greatest_consecutive_sum(l: list) -> int:
-    gsum = 0
-    i = 0
-    while i < len(l) - 2:
+    i: int = 0
+    gsum: int = l[i] + l[i + 1]
+    i += 1
+    while i < len(l) - 1:
         gsum = max(gsum, l[i] + l[i + 1])
         i += 1
     return gsum

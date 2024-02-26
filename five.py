@@ -1,14 +1,13 @@
-def get_matching_words(ls: list) -> list:
+def find_anagrams(ls: list) -> list:
     matching_words = []
-    i = 0
+    i: int = 0
     while i < len(ls):
-        j = i + 1
+        j: int = i + 1
         word = ls[i]
         while j < len(ls):
             if len(word) == len(ls[j]):
-                print(word, ls[j])
                 chr_count = 0
-                k = 0
+                k: int = 0
                 characters_in_word = list(word)
                 characters_in_compared_word = list(ls[j])
                 characters_in_word.sort()
@@ -21,6 +20,7 @@ def get_matching_words(ls: list) -> list:
                     print("", end = "") if word in matching_words else matching_words.append(word)
                     print("", end = "") if ls[j] in matching_words else matching_words.append(ls[j])
                     ls.pop(j)
+                    j -= 1
             j += 1
         ls.pop(i)
         i += 1
@@ -36,4 +36,4 @@ if __name__ == "__main__":
             word_list.append(word)
         else:
             done = True
-    print("The words with matching characters in {} are:".format(word_list), get_matching_words(word_list))
+    print("The words with matching characters in {} are:".format(word_list), find_anagrams(word_list))
